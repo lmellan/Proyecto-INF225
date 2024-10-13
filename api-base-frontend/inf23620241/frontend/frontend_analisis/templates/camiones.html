@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Camiones</title>
+</head>
+<body class="bg-gray-100">
+    <!-- Barra superior -->
+    <div class="bg-gray-300 p-4 flex justify-between items-center">
+        <a href="{% url 'index' %}" class="text-white bg-red-500 px-4 py-2 rounded shadow-md hover:bg-red-600 transition duration-300">Salir</a>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="container mx-auto p-4">
+        <div class="bg-gray-300 p-8 rounded-lg shadow-lg mb-6">
+            <!-- Barra de navegación -->
+            <div class="flex justify-around mb-6 text-xl">
+                <a href="{% url 'incidencias_sin_asignar' %}" class="text-gray-600">Asignar Mecánicos</a>
+                <a href="{% url 'motores_view' %}" class="text-gray-600">Motores</a>
+                <a href="{% url 'camiones' %}" class="text-black font-semibold">Camiones</a>
+                <a href="{% url 'historial_incidencias' %}" class="text-gray-600">Historial Incidencias</a>
+            </div>
+
+            <div class="bg-white p-6 rounded shadow-md">
+                <h2 class="text-2xl font-bold mb-6">Camiones:</h2>
+                <!-- Filtros -->
+                <form method="GET" class="flex items-center mb-4">
+                    <div class="flex items-center">
+                        <label for="estado_motor" class="font-medium mr-2">Asignación motor:</label>
+                        <select id="estado_motor" name="estado" class="p-2 border rounded w-64 mr-2">
+                            <option value="">Seleccione un estado</option>
+                            <option value="Todos" {% if estado == 'Todos' %}selected{% endif %}>Todos</option>
+                            <option value="Sin asignar" {% if estado == 'Sin asignar' %}selected{% endif %}>Sin asignar</option>
+                            <option value="Asignado" {% if estado == 'Asignado' %}selected{% endif %}>Asignado</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="bg-teal-500 text-white px-4 py-2 rounded shadow-md hover:bg-teal-600">Filtrar</button>
+                </form>
+
+                <!-- Tabla de camiones -->
+                <table class="min-w-full bg-white">
+                    <thead>
+                        <tr class="bg-gray-200 text-left">
+                            <th class="py-2 px-4">Patente</th>
+                            <th class="py-2 px-4">Marca</th>
+                            <th class="py-2 px-4">Modelo</th>
+                            <th class="py-2 px-4">Asignación Motor</th>
+                            <th class="py-2 px-4">Editar/Ver</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if camiones %}
+                            {% for camion in camiones %}
+                                <tr class="w-full text-left border-t {% cycle 'bg-white' 'bg-gray-100' %}">
+                                    <td class="py-2 px-4">{{ camion.patente }}</td>
+                                    <td class="py-2 px-4">{{ camion.marca }}</td>
+                                    <td class="py-2 px-4">{{ camion.modelo }}</td>
+                                    <td class="py-2 px-4">
+                                        {% if camion.patente in camiones_asignados %}
+                                            Asignado
+                                        {% else %}
+                                            Sin asignar
+                                        {% endif %}
+                                    </td>
+                                    <td class="py-2 px-4">
+                                        <a href="{% if camion.patente in camiones_asignados %}{% url 'ver_asignacion_camion' id=camion.patente %}{% else %}{% url 'asignacion_motor' id=camion.patente %}{% endif %}" class="bg-gray-500 text-white px-4 py-2 rounded shadow-md hover:bg-gray-600">
+                                            {% if camion.patente in camiones_asignados %}Ver{% else %}Editar{% endif %}
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        {% else %}
+                            <tr>
+                                <td colspan="5" class="py-4 text-center text-gray-600">No hay camiones registrados con la asignación seleccionada</td>
+                            </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Botón nuevo camión -->
+            <div class="mt-6 flex justify-center">
+                <a href="{% url 'crear_camion' %}" class="bg-blue-500 text-white px-6 py-3 rounded shadow-md hover:bg-blue-700">Nuevo Camión</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Incidencia</title>
+</head>
+
+<body class="bg-gray-100 h-screen flex flex-col">
+
+    <!-- Barra superior -->
+    <div class="bg-gray-300 p-4 flex justify-between items-center fixed top-0 left-0 w-full z-10">
+        {% if mecanico.rut %}
+        <a href="{% url 'mecanico' rut=mecanico.rut %}"
+            class="text-white bg-red-500 px-4 py-2 rounded shadow-md hover:bg-red-600 transition duration-300">
+            Volver
+        </a>
+        {% else %}
+        <span class="text-white bg-red-500 px-4 py-2 rounded">Mecánico no encontrado</span>
+        {% endif %}
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="container mx-auto p-4 mt-16"> <!-- Añadido mt-16 para compensar la barra superior fija -->
+        <div class="bg-gray-300 p-4 rounded">
+            <!-- Sección de mensajes de error -->
+            {% if messages %}
+            <div class="mb-4 text-center">
+                {% for message in messages %}
+                <div class="bg-red-500 text-white p-2 mb-2">
+                    <strong>Error:</strong> {{ message }}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+    
+            <!-- Información de la incidencia -->
+            <div class="flex items-center mt-4 mb-10 ml-14">
+                <h1 class="text-2xl font-bold">Incidencia {{ incidencia.id }}</h1>
+                {% if not incidencia.estado %}
+                <span class="ml-8 text-xl">Estado: En proceso </span>
+                {% else %}
+                <span class="ml-8 text-xl">Estado: Finalizada </span>
+                {% endif %}
+            </div>
+    
+            <!-- Mecánicos asignados -->
+            <div class="mb-8">
+                <h2 class="text-xl font-semibold">Mecánicos asignados:</h2>
+                <div class="flex flex-wrap justify-start">
+                    {% for mecanico in mecanicos_asignados %}
+                    <div class="bg-white shadow-lg rounded-lg p-6 m-2 w-60 flex flex-col items-center">
+                        <!-- Ícono de persona -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor"
+                            class="bi bi-person-circle text-gray-600 mb-4" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                            <path fill-rule="evenodd"
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                        </svg>
+                        <!-- Detalles del mecánico -->
+                        <p class="font-bold text-xl">{{ mecanico.nombre }}</p>
+                        <p class="text-gray-600">{{ mecanico.rut }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+    
+            <!-- Detalles de la incidencia -->
+            <div class="flex justify-between mr-14">
+                <div>
+                    <p><strong>Fecha de Inicio:</strong> {{ incidencia.fecha_inicio|date:"d-m-Y H:i" }}</p>
+                    <p><strong>Fecha de Termino:</strong> {{ incidencia.fecha_termino|date:"d-m-Y H:i" }}</p>
+                </div>
+                <div>
+                    <p><strong>Motor:</strong> {{ motor.n_serie }}</p>
+                    <p><strong>Tipo:</strong> {{ incidencia.tipo_incidencia }}</p>
+                </div>
+            </div>
+            <p><strong>Descripción problema:</strong></p>
+            <div class="w-full p-2 mt-2 mb-4 rounded bg-gray-200">
+                {{ incidencia.descripcion }}
+            </div>
+        </div>
+    
+        <!-- Sección para mostrar los progresos -->
+        <div class="bg-gray-200 p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-2xl font-bold mb-4">Progresos:</h2>
+            {% for progreso in progresos %}
+            {% if progreso.incidencia == incidencia.id %}
+            {% for mec in mecanicos %}
+            {% if mec.rut == progreso.mecanico %}
+            <div class="mb-6">
+                <p class="text-lg font-semibold">{{ mec.nombre }}</p>
+                <div class="bg-gray-300 p-4 rounded shadow">
+                    <p><strong>Fecha de Progreso:</strong> {{ progreso.fecha_progreso|date:"d-m-Y H:i" }}</p>
+                    <p><strong>Descripción:</strong> {{ progreso.descripcion }}</p>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% empty %}
+            <p>No hay progresos registrados para esta incidencia.</p>
+            {% endfor %}
+        </div>
+    
+        <!-- Sección para publicar avances -->
+        <div class="bg-gray-300 p-4 rounded mt-6">
+            <h2 class="text-xl font-bold">Publicar Avance</h2>
+            <form method="POST" action="{% url 'incidencia' rut=mecanico.rut id=incidencia.id %}">
+                {% csrf_token %}
+                <div class="flex justify-between items-center mb-4">
+                    <label for="estado" class="font-medium p-5">Estado incidencia:</label>
+                    <select name="estado" id="estado" class="form-control p-2 rounded border border-gray-300" required>
+                        <option value="False">En proceso</option>
+                        <option value="True">Finalizada</option>
+                    </select>
+                    <span id="fecha_actual" class="ml-auto"></span>
+                </div>
+                <textarea name="descripcion" class="w-full p-2 mt-2 mb-4 rounded border border-gray-300" rows="4"
+                    placeholder="Escribir avance realizado..." required></textarea>
+                <input type="hidden" name="mecanico" value="{{ mecanico.rut }}">
+                <input type="hidden" name="incidencia" value="{{ incidencia.id }}">
+                <div class="flex justify-end">
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Publicar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Script para obtener la fecha y hora actual -->
+    <script>
+        var fechaActual = new Date();
+        var opcionesFechaHora = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+        var fechaHoraFormateada = fechaActual.toLocaleDateString('es-ES', opcionesFechaHora);
+
+        document.getElementById('fecha_actual').textContent = 'Fecha actual: ' + fechaHoraFormateada;
+    </script>
+</body>
+
+</html>

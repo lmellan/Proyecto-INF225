@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Registrar Antecedente</title>
+</head>
+
+<body class="bg-gray-100 h-screen flex flex-col">
+
+    <!-- Barra superior -->
+    <div class="bg-gray-300 p-4 flex justify-between items-center fixed top-0 left-0 w-full z-10">
+        <a href="{% url 'index' %}"
+            class="text-white bg-red-500 px-4 py-2 rounded shadow-md hover:bg-red-600 transition duration-300">
+            Salir
+        </a>
+    </div>
+
+    <!-- Contenido principal centrado con margen superior dinámico -->
+    <div class="flex-grow flex items-center justify-center {% if success %}mt-24{% else %}mt-16{% endif %}">
+        <div class="bg-gray-300 p-8 rounded-lg shadow-lg w-full max-w-3xl">
+
+            <h1 class="text-3xl font-bold text-center mb-6">Registrar Antecedente</h1>
+
+            <!-- Mostrar mensaje de éxito -->
+            {% if success %}
+            <div class="bg-green-500 text-white p-2 mb-4 text-center">
+                <strong>Éxito:</strong> Se ha registrado el antecedente con éxito.
+            </div>
+            {% endif %}
+
+            {% if not camiones %}
+            <div class="bg-yellow-500 text-white p-2 mb-4 text-center">
+                <strong>Advertencia:</strong> No hay camiones registrados para crear un antecedente.
+            </div>
+            {% else %}
+            <form method="POST" action="{% url 'ingreso_antecedente' %}" class="space-y-6">
+                {% csrf_token %}
+                <div class="flex flex-col">
+                    <label for="nombre" class="mb-2 font-medium text-lg">Nombre:</label>
+                    <input type="text" name="nombre" id="nombre" class="p-2 rounded border border-gray-300 text-lg"
+                        required>
+                </div>
+                <div class="flex flex-col">
+                    <label for="camion" class="mb-2 font-medium text-lg">Camión (Patente):</label>
+                    <select name="camion" id="camion" class="p-2 rounded border border-gray-300 text-lg" required>
+                        {% for camion in camiones %}
+                        <option value="{{ camion.patente }}">{{ camion.patente }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="flex flex-col">
+                    <label for="descripcion" class="mb-2 font-medium text-lg">Detalle del Antecedente:</label>
+                    <textarea name="descripcion" id="descripcion" class="p-2 rounded border border-gray-300 text-lg"
+                        required></textarea>
+                </div>
+                <button type="submit"
+                    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded text-lg mt-4">Registrar</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>

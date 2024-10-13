@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Nuevo Motor</title>
+</head>
+<body class="bg-gray-200">
+    <!-- Barra superior -->
+    <div class="bg-gray-800 p-4 flex justify-between items-center">
+        <a href="{% url 'motores_view' %}" class="text-white bg-red-500 px-4 py-2 rounded ml-auto">Volver</a>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="container mx-auto p-4">
+        <div class="bg-gray-300 p-6 rounded shadow-lg">
+            <h1 class="text-2xl font-bold mb-6">Nuevo Motor:</h1>
+            
+            <!-- Mostrar mensajes -->
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="{% if message.tags %}{{ message.tags }}{% endif %} p-4 mb-4 rounded">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            
+            <form method="POST" action="{% url 'crear_motor' %}" class="space-y-6">
+                {% csrf_token %}
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="flex flex-col">
+                        <label for="n_serie" class="font-medium">Número de Serie:</label>
+                        <input type="text" name="n_serie" id="n_serie" class="form-control p-2 rounded border border-gray-300" required>
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="marca" class="font-medium">Marca:</label>
+                        <input type="text" name="marca" id="marca" class="form-control p-2 rounded border border-gray-300" required>
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="estado" class="font-medium">Estado:</label>
+                        <select name="estado" id="estado" class="form-control p-2 rounded border border-gray-300" required>
+                            <option value="Operativo">Operativo</option>
+                            <option value="Averiado">Averiado</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mt-6 flex justify-end">
+                    <button type="submit" class="bg-gray-500 text-white px-6 py-3 rounded">Registrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

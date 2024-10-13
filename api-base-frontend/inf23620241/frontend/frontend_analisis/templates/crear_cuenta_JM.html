@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Regístrate JM</title>
+</head>
+
+
+<body class="bg-gray-100 h-screen flex flex-col">
+
+    <!-- Barra superior -->
+    <div class="bg-gray-300 p-4 flex justify-between items-center fixed top-0 left-0 w-full z-10">
+        <a href="{% url 'ingresar_cuenta' %}"
+            class="text-white bg-red-500 px-4 py-2 rounded shadow-md hover:bg-red-600 transition duration-300">
+            Volver
+        </a>
+    </div>
+
+
+    <div class="flex-grow flex items-center justify-center">
+        <!-- Contenido principal -->
+        <div class="bg-gray-300 p-8 rounded-lg shadow-lg w-full max-w-md">
+
+            <h1 class="text-3xl font-bold text-center mb-6">Regístrate</h1>
+
+            {% if error %}
+            <div class="bg-red-500 text-white p-2 mb-4 text-center">
+                <strong>Error:</strong> {{ error }}
+            </div>
+            {% endif %}
+
+            <form method="POST" action="{% url 'crear_cuenta_JM' %}" class="space-y-4">
+                {% csrf_token %}
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="flex flex-col">
+                        <label for="rut" class="mb-2 font-medium text-lg">Rut (12345678-k)</label>
+                        <input type="text" name="rut" id="rut" class="p-2 rounded border border-gray-300 text-lg"
+                            required>
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="nombre" class="mb-2 font-medium text-lg">Nombre y apellido</label>
+                        <input type="text" name="nombre" id="nombre" class="p-2 rounded border border-gray-300 text-lg"
+                            required>
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="contraseña" class="mb-2 font-medium text-lg">Contraseña</label>
+                        <input type="password" name="contraseña" id="contraseña"
+                            class="p-2 rounded border border-gray-300 text-lg" required>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-6">
+                    <button type="submit"
+                        class="bg-teal-500 text-white font-bold px-4 py-2 rounded text-lg">Crear</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

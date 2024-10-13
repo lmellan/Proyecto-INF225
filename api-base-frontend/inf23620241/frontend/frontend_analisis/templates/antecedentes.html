@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<!-- https://icons.getbootstrap.com/  Iconos-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Antecedentes del Camión</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-gray-100 h-screen flex flex-col">
+
+    <!-- Barra superior -->
+    <div class="bg-gray-300 p-4 flex justify-between items-center fixed top-0 left-0 w-full z-10">
+        <a href="{% url 'crear_incidencia' rut=rut %}"
+            class="text-white bg-red-500 px-4 py-2 rounded shadow-md hover:bg-red-600 transition duration-300">
+            Volver
+        </a>
+    </div>
+
+    <!-- Contenido principal centrado -->
+    <div class="flex-grow flex items-center justify-center mt-24">
+        <div class="bg-gray-300 p-8 rounded-lg shadow-lg w-full max-w-3xl">
+
+            <h1 class="text-3xl font-bold text-center mb-6">Antecedentes del camión</h1>
+
+            <div class="text-center mb-3 mt-12">
+                <i class="fa-solid fa-truck-monster text-8xl mb-1"></i>
+            </div>
+
+            <!-- Mostrar patente del camión si existe -->
+            <div class="text-center mb-6">
+                {% if camion %}
+                <p class="text-xl font-semibold">Camión Patente: <span class="font-bold">{{ camion.patente }}</span></p>
+                {% else %}
+                <p class="text-gray-500">No asignado</p>
+                {% endif %}
+            </div>
+
+            <!-- Selector de motor -->
+            <form method="GET" class="mb-6">
+                <label for="motor_id" class="block text-lg font-medium mb-2">Motor (número de serie):</label>
+                <select name="motor_id" id="motor_id"
+                    class="w-full p-2 rounded border border-gray-300 text-lg mb-4"
+                    onchange="this.form.submit()">
+                    <option value="" disabled {% if not motor_data %}selected{% endif %}>Seleccione el motor</option>
+                    {% for motor in motores %}
+                    <option value="{{ motor.id }}" {% if motor.id == motor_data.id %}selected{% endif %}>{{ motor.n_serie }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </form>
+
+            <!-- Detalles del camión -->
+            {% if camion %}
+            <div class="bg-gray-200  p-6 rounded shadow mb-6">
+                <p><strong>Patente:</strong> {{ camion.patente }}</p>
+                <p><strong>Marca:</strong> {{ camion.marca }}</p>
+                <p><strong>Modelo:</strong> {{ camion.modelo }}</p>
+            </div>
+            {% else %}
+            <div class="bg-yellow-500 text-white p-4 rounded shadow text-center">
+                No hay un camión asociado a este motor.
+            </div>
+            {% endif %}
+
+            <!-- Lista de antecedentes -->
+            <h2 class="text-2xl font-semibold mb-4">Antecedentes</h2>
+            <div class="space-y-4">
+                {% for antecedente in antecedentes %}
+                <div class="bg-gray-200  p-4 rounded-lg shadow-md flex justify-between items-center">
+                    <div>
+                        <p class="text-lg font-semibold">{{ antecedente.descripcion }}</p>
+                        <p class="text-sm text-gray-700 fecha-registro">{{ antecedente.fecha_registro }}</p>
+                        <p class="text-sm text-gray-700">Conductor: {{ antecedente.nombre }}</p>
+                    </div>
+                </div>
+                {% empty %}
+                <p class="text-gray-500">No hay antecedentes para este camión.</p>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const dateElements = document.querySelectorAll('.fecha-registro');
+            
+            dateElements.forEach(function(element) {
+                const fechaOriginal = element.textContent;
+                const fecha = new Date(fechaOriginal);
+    
+                const opciones = { year: 'numeric', month: '2-digit', day: '2-digit', 
+                                   hour: '2-digit', minute: '2-digit', second: '2-digit' };
+    
+                element.textContent = fecha.toLocaleDateString('es-ES', opciones).replace(',', '');
+            });
+        });
+    </script>
+    
+
+</body>
+
+</html>

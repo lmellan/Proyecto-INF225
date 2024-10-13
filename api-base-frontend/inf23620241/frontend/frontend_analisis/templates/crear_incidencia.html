@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Registrar Incidencia</title>
+</head>
+
+<body class="bg-gray-100 h-screen flex flex-col">
+
+    <!-- Barra superior -->
+    <div class="bg-gray-300 p-4 flex justify-between items-center fixed top-0 left-0 w-full z-10">
+        <a href="{% url 'mecanico' rut=mecanico.rut %}" class="text-white bg-red-500 px-4 py-2 rounded shadow-md hover:bg-red-600 transition duration-300">Volver</a>
+    </div>
+
+    <!-- Contenido principal centrado con margen superior dinámico -->
+    <div class="flex-grow flex items-center justify-center mt-24">
+        <div class="bg-gray-300 p-8 rounded-lg shadow-lg w-full max-w-3xl">
+
+            <h1 class="text-3xl font-bold text-center mb-6">Registrar Incidencia</h1>
+
+            {% if messages %}
+            {% for message in messages %}
+            <div class="bg-red-500 text-white p-2 mb-4 rounded">
+                {{ message }}
+            </div>
+            {% endfor %}
+            {% endif %}
+
+            {% if not motores %}
+            <div class="bg-yellow-500 text-white p-2 mb-4 rounded text-center">
+                <strong>Advertencia:</strong> No hay motores disponibles para registrar una incidencia.
+            </div>
+            {% else %}
+
+            <form method="POST" action="{% url 'crear_incidencia' rut=mecanico.rut %}" class="space-y-6">
+                {% csrf_token %}
+
+                <!-- Fila Motor y Ver Antecedentes en la misma fila -->
+                <div class="flex space-x-4 items-center">
+                    <div class="flex flex-col flex-grow">
+                        <label for="motor" class="mb-2 font-medium text-lg">Motor (número de serie):</label>
+                        <select name="motor" id="motor" class="p-2 rounded border border-gray-300 text-lg" required>
+                            <option value="" disabled selected>Seleccione el motor</option> <!-- Opción predeterminada -->
+                            {% for motor in motores %}
+                            <option value="{{ motor.id }}">{{ motor.n_serie }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="mt-9">
+                        <a href="{% url 'antecedentes' rut=mecanico.rut %}" class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded shadow-md">
+                            Ver Antecedentes
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Fecha de término -->
+                <div class="flex flex-col">
+                    <label for="fecha_termino" class="mb-2 font-medium text-lg">Fecha de término:</label>
+                    <input type="datetime-local" name="fecha_termino" id="fecha_termino" class="p-2 rounded border border-gray-300 text-lg" required>
+                </div>
+
+                <!-- Descripción del problema -->
+                <div class="flex flex-col">
+                    <label for="descripcion" class="mb-2 font-medium text-lg">Descripción del problema:</label>
+                    <textarea name="descripcion" id="descripcion" class="p-2 rounded border border-gray-300 text-lg" required></textarea>
+                </div>
+
+                <!-- Tipo de incidencia -->
+                <div class="flex flex-col">
+                    <label for="tipo_incidencia" class="mb-2 font-medium text-lg">Tipo de Incidencia:</label>
+                    <select name="tipo_incidencia" id="tipo_incidencia" class="p-2 rounded border border-gray-300 text-lg" required>
+                        <option value="" disabled selected class="text-gray-400">Seleccione el tipo</option> <!-- Opción predeterminada -->
+                        <option value="Por Falla">Por Falla</option>
+                        <option value="Programada">Programada</option>
+                    </select>
+                </div>
+
+                <!-- Botón de registrar -->
+                <div class="flex justify-center">
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded shadow-md text-lg mt-4">
+                        Registrar
+                    </button>
+                </div>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>

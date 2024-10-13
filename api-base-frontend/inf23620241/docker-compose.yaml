@@ -1,0 +1,50 @@
+services:
+  db:
+    image: mysql
+    container_name: inf236_backend_mariadb
+    restart: always
+    env_file:
+      - ./.env
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_HOST: "0.0.0.0"
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysql", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}", "-e", "SELECT 1"]
+      timeout: 20s
+      retries: 10
+  
+  backend:
+    build: .
+    container_name: inf236_backend
+    command: sh -c "python3 manage.py migrate --noinput && python manage.py runserver 0.0.0.0:8000"
+    restart: always
+    env_file:
+      - ./.env
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  frontend:
+    build: ./frontend
+    container_name: inf236_frontend
+    command: python manage.py runserver 0.0.0.0:8001
+    restart: always
+    env_file:
+      - ./.env
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "8001:8001"
+    depends_on:
+      - backend
+
+volumes:
+  db_data:

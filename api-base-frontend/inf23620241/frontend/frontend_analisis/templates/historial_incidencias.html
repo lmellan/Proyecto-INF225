@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Historial de Incidencias Motor</title>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Barra superior -->
+    <div class="bg-gray-300 p-4 flex justify-between items-center">
+        <a href="{% url 'index' %}" class="text-white bg-red-500 px-4 py-2 rounded shadow-md hover:bg-red-600 transition duration-300">Salir</a>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="container mx-auto p-4">
+        <div class="bg-gray-300 p-8 rounded-lg shadow-lg mb-6">
+            <!-- Barra de navegación -->
+            <div class="flex justify-around mb-6 text-xl">
+                <a href="{% url 'incidencias_sin_asignar' %}" class="text-gray-600">Asignar Mecánicos</a>
+                <a href="{% url 'motores_view' %}" class="text-gray-600">Motores</a>
+                <a href="{% url 'camiones' %}" class="text-gray-600">Camiones</a>
+                <a href="{% url 'historial_incidencias' %}" class="text-black font-semibold">Historial Incidencias</a>
+            </div>
+
+            <!-- Contenido principal -->
+            <div class="bg-white p-6 rounded shadow-md">
+                <h2 class="text-2xl font-bold mb-6">Incidencias:</h2>
+                <form method="GET" class="flex justify-between items-center mb-4">
+                    <div class="flex items-center">
+                        <label for="numero_motor" class="font-medium mr-4">Número de serie motor:</label>
+                        <select id="numero_motor" name="numero_motor" class="p-2 border rounded w-64 mr-4">
+                            <option value="">Todos</option>
+                            {% for motor in motores %}
+                            <option value="{{ motor.id }}" {% if motor.id|stringformat:"s" == request.GET.numero_motor %}selected{% endif %}>
+                                {{ motor.n_serie }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="flex items-center">
+                        <label for="estado" class="font-medium mr-4">Estado:</label>
+                        <select id="estado" name="estado" class="p-2 border rounded w-64 mr-4">
+                            <option value="">Todos</option>
+                            <option value="True" {% if request.GET.estado == 'True' %}selected{% endif %}>Finalizada</option>
+                            <option value="False" {% if request.GET.estado == 'False' %}selected{% endif %}>En progreso</option>
+                        </select>
+                    </div>
+                    <div class="flex items-center">
+                        <button type="submit" class="bg-teal-500 text-white px-4 py-2 rounded shadow-md hover:bg-teal-600">Filtrar</button>
+                        <a href="{% url 'historial_incidencias' %}" class="bg-teal-500 text-white px-4 py-2 rounded shadow-md hover:bg-teal-600 ml-2">Reiniciar</a>
+                    </div>
+                </form>
+                
+                <table class="min-w-full bg-white">
+                    <thead>
+                        <tr class="bg-gray-200 text-left">
+                            <th class="py-2 px-4">Incidencia</th>
+                            <th class="py-2 px-4">Tipo</th>
+                            <th class="py-2 px-4">Motor</th>
+                            <th class="py-2 px-4">Estado</th>
+                            <th class="py-2 px-4">Ver incidencia</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% if incidencias %}
+                        {% for incidencia in incidencias %}
+                        <tr class="w-full text-left border-t {% cycle 'bg-white' 'bg-gray-100' %}">
+                            <td class="py-2 px-4">{{ incidencia.id }}</td>
+                            <td class="py-2 px-4">{{ incidencia.tipo_incidencia }}</td>
+                            <td class="py-2 px-4">
+                                {% for motor in motores %}
+                                {% if motor.id == incidencia.motor %}
+                                {{ motor.n_serie }}
+                                {% endif %}
+                                {% endfor %}
+                            </td>
+                            <td class="py-2 px-4">{{ incidencia.estado|yesno:"Finalizada,En progreso" }}</td>
+                            <td class="py-2 px-4">
+                                <a href="{% url 'incidencia_JM' id=incidencia.id %}" class="bg-gray-500 text-white px-4 py-2 rounded shadow-md hover:bg-gray-600">Ver</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        {% else %}
+                        <tr>
+                            <td colspan="6" class="py-4 text-center text-gray-600">No hay incidencias disponibles</td>
+                        </tr>
+                        {% endif %}
+                    </tbody>
+                </table>
+                <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-gray-300 p-4 rounded shadow-md">
+                        <p class="text-lg font-semibold">Incidencias programadas:</p>
+                        <p class="text-xl font-bold">{{incidencias_programadas}}</p>
+                    </div>
+                    <div class="bg-gray-300 p-4 rounded shadow-md">
+                        <p class="text-lg font-semibold">Incidencias por falla:</p>
+                        <p class="text-xl font-bold">{{incidencias_fallas}}</p>
+                    </div>
+                    <div class="bg-gray-300 p-4 rounded shadow-md">
+                        <p class="text-lg font-semibold">Incidencias en progreso:</p>
+                        <p class="text-xl font-bold">{{ incidencias_en_progreso }}</p>
+                    </div>
+                    <div class="bg-gray-300 p-4 rounded shadow-md">
+                        <p class="text-lg font-semibold">Incidencias finalizadas:</p>
+                        <p class="text-xl font-bold">{{ incidencias_finalizadas }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
