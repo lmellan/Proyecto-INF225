@@ -16,6 +16,16 @@ class IncidenciaSerializer(serializers.ModelSerializer):
         model = Incidencia
         fields = '__all__'
 
+    def validate(self, data):
+
+        fecha_inicio = data.get('fecha_inicio')
+        fecha_termino = data.get('fecha_termino')
+
+        if fecha_termino and fecha_inicio and fecha_termino < fecha_inicio:
+            raise serializers.ValidationError("La fecha de término no puede ser menor que la fecha de inicio.")
+
+        return data
+
 class ProgresoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Progreso

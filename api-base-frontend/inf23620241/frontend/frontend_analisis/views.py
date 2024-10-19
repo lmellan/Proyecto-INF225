@@ -155,8 +155,6 @@ def crear_incidencia(req, rut):
     motores_respuesta = requests.get(motores_url)
     mecanico_respuesta = requests.get(mecanico_url)
 
-
-
     if req.method == 'POST':
         data = {
             'fecha_termino': req.POST.get('fecha_termino'),
@@ -176,15 +174,23 @@ def crear_incidencia(req, rut):
             response.raise_for_status()
 
             if response.status_code == 201:
-                #messages.success(req, 'Incidencia creada exitosamente.')
                 return redirect(reverse('mecanico', kwargs={'rut': rut}))
             else:
                 messages.error(req, 'Error al crear la incidencia.')
                 print("Error al crear la incidencia:", response.json())  # Depuración: Imprimir contenido de la respuesta
 
-        except requests.exceptions.RequestException as e:
+        except requests.exceptions.HTTPError as e:
             if e.response is not None:
-                print("Respuesta de error del servidor:", e.response.content)  # Depuración: Imprimir contenido de la respuesta de error
+                # Capturar respuesta de error 400 y mostrar mensaje específico sobre la fecha
+                if e.response.status_code == 400:
+                    messages.error(req, 'Error al crear la incidencia: La fecha de término debe ser superior a la fecha actual.')
+
+                    print("Respuesta de error 400 del servidor:", e.response.content)  # Depuración: Imprimir contenido de la respuesta de error
+                else:
+                    messages.error(req, f'Error en la solicitud: {str(e)}')
+                    print("Excepción al crear la incidencia:", str(e))  # Depuración: Imprimir excepción
+
+        except requests.exceptions.RequestException as e:
             messages.error(req, f'Error en la solicitud: {str(e)}')
             print("Excepción al crear la incidencia:", str(e))  # Depuración: Imprimir excepción
 
