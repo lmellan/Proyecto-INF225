@@ -1,0 +1,28 @@
+{
+    "version": "15.1.4",
+    "vulnerabilities": [],
+    "scan": {
+        "analyzer": {
+            "id": "semgrep",
+            "name": "Semgrep",
+            "url": "https://gitlab.com/gitlab-org/security-products/analyzers/semgrep",
+            "vendor": {
+                "name": "GitLab"
+            },
+            "version": "5.19.0"
+        },
+        "scanner": {
+            "id": "semgrep",
+            "name": "Semgrep",
+            "url": "https://github.com/returntocorp/semgrep",
+            "vendor": {
+                "name": "GitLab"
+            },
+            "version": "1.74.0"
+        },
+        "type": "sast",
+        "start_time": "2024-11-11T03:51:31",
+        "end_time": "2024-11-11T03:51:44",
+        "status": "success"
+    }
+}

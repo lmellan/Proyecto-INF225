@@ -1,0 +1,2684 @@
+{
+    "version": "15.1.4",
+    "vulnerabilities": [
+        {
+            "id": "22fbb9a7327e4b5b39dcf3908f0e03a6ba12346fa50cabf22e8064ddcb77b26b",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:100:100",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 100
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "09e3e9683eb4c5dc8081a3a76f1f89021113970b446d8c875f9c82b13b07a973",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:101:101",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 101
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "b4b11311606237774bbef905c901cd01beae3880c31c7fe3050e8405dd2d7fbc",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:102:102",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 102
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "45bbd13c12a399da8ac166170ac444fceade018a1ea2622269cf02ed03e85afb",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:103:103",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 103
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "7dafc934a094f0100b09dd5d4ea6cc47ad76d00141d11b7b27271c21487b554c",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:116:116",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 116
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "057c12b06247c2ad6875e6c6c89189b51a0ca5cf6860b7501761123ef3dc2c57",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:155:155",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 155
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "0ed37b2499e6c7555385ce840728f8074c642bdf54828a7208f2fb3d194f80df",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:156:156",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 156
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "d92d6a133482e6a11dc7d4f3d61fe6d1074c092deeccb9982f1f8aba412ae142",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:173:173",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 173
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "9e66912f68aa30d8393cfb93e8ec5acc8350af9d478faf1e6672a960ea59dad4",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:211:211",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 211
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "a8507fb36e421819a31536080c46289978083fede2b4d5ae43a71b201a10373f",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:22:22",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 22
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "02ec1f18875b29c3642dcac86d1b954752475a1a54d8af81aec1723e434a8c94",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:23:23",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 23
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "f04134f742e0454aa3b552f223050917a44456adbc11ea30429131b6f9cf9d82",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:242:242",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 242
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "dea6d52d0f4a5ee63639a69d1c7b8144328cdd4aaedda2e2f8446a398c4dcb30",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:24:24",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 24
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "eefcb451fd6c5425eea86b0b30603d3d085e88d1476755c28cd95bb15d24df09",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:278:278",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 278
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "a606e7228a77d5e916545c9e99a6fed8e2aabed100e1e77f0dfcb86de3e861cd",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:289:289",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 289
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "a6affa27f652bdeeba5228a25144ab190dc7c9f8b2cb4ee1ae6054884541a6b5",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:295:295",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 295
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "df539769952a5ec2c5cd182429bed7d7578be206994d8368616acdf6a3941a3d",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:301:301",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 301
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "c394f882a0b9c92a995a3cad038797349cbf8bc9058e31d2a600ca29b3cd693a",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:337:337",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 337
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "db8865da4725e4d4cb1a91981d9797b92e273d8b80a853d25be237ab5e249568",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:354:354",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 354
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "783759868b1825cbaff978fae5ebde0b2b3ef7698db61ea301c9c6ebc49a1e73",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:358:358",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 358
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "749ec12e7a17d3a59bc1602c085049e246f764e4f81e185ba43136675212a527",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:359:359",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 359
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "3a6d4fe25b011d1cfec9964112c27daa73ec8e7ef050a447ba964fc8ac60053a",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:393:393",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 393
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "83ff7ac55c689ddbe6aca479ac0bdb9defeb8a1034801e8b8a498ee05520bb54",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:423:423",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 423
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "3a469b0709b7a964a4b9813ee3753e1901577d7e66c40500f94e6f974c72c981",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:439:439",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 439
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "dc75426b5692bd5e863a6c7eb4481aba99ec52f4c66e274a8d6b7aab44edf6fa",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:443:443",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 443
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "ff967cac985e5e053c54a9525751996e37da4342b162016ea2a5adcf54526018",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:454:454",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 454
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "1c5cea11b336d6d96e119344426d4c960e4b097b32b265d936f559787cc4ad8e",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:476:476",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 476
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "df40462e1712db02d155aede20767a867d406ef630010ad67f2c546b0f690214",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:479:479",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 479
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "cb54d25f50ef1dee8a49559d90f2a0a8d86b4d0d8f3f5a52e73319e60449841b",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:493:493",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 493
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "ef085d23fd7cf8bdfa468db5b2b3b0bd70e5379fb91579636f31d2d3c9f47c54",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:494:494",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 494
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "dfa63cf493eb049061548ccd59818beb21fe4520431e0b05ea8470e85c5beac4",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:541:541",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 541
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "a54d2c48480c6a5d2899abb9351a2805d60a6d15602d1ab7f83bbeda2ff58544",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:552:552",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 552
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "eddcb218e0706a7e51b54e10f5376fc8c45479288b42141e2910a4e523181c4e",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:553:553",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 553
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "8f452036f3bcbbbe3a52bd720bf7845863197b10ed3fa0215b59e39939bc1137",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:554:554",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 554
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "9f59602b55b6a0c87758e2d5e7aa93b4b1a25995f8bd6c95218ecab310379d24",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:555:555",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 555
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "9ea11187776862fb560446b67e2ea19506154bb1759908188dc707dff533640e",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:566:566",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 566
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "8acf3d205ea088fb18b636a1766c6926896f7d4e9532f521ed49974f1f8ebd8e",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:617:617",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 617
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "ef82fce3ebb4896cc9794d563a983e49e431f13fe8a081f535baba56027537a7",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:632:632",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 632
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "e1e7d31b2bcb514a32b598ece7a804d1b601214b8a44cdf563a9eae306c19009",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:63:63",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 63
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "52ed6179dedb55070f7d47a509627ca4db6624f9fe040b3fae10ce986fec7ee2",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:652:652",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 652
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "3f5a99cef16dc42f7033371f0316b55d3d59ad428da1e7cbcccf4219f62582c2",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:670:670",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 670
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "76a1091155b75cf846c1136e89c095d25fa68c43093c2d34f1d06ef7e93f3e68",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:674:674",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 674
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "8bc374f715298c4489f86b5cde433f8189ea9ff66f52ce5a234d6291e13148d5",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:713:713",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 713
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "31215c962995cb83021e143691fd1cf63d85ea40a316fc457c5f98d2ad604f3b",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:731:731",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 731
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "06b15266bf06078beb3deb1dd36b4ec0cafd8593e0d65a52ea526456d98e29f4",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:735:735",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 735
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "10a8ca7c77a89f3bb94859cce7e88e305cc59479bc4d39b3ca01f98c35ea3b1c",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:739:739",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 739
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "208e5a0a5386d5e77ac8f9a44801b8e0ccb15bc233a253897db4dce35c7907be",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:760:760",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 760
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "2ec69a7ebdab3b041037c11c0f58da238c07e652c503e32c086eb90a78afaf3f",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:782:782",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 782
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "f9b84a5acafa6b301bd41f6148d5233b63303e0e4752e880336af75818de9abb",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:786:786",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 786
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "3aef95954c2f526d39105f4b87da354a24633003f8a25136bf0519f526bf1686",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:790:790",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 790
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "4b2bf906447c55fcd2b4ef5c16325529ab470795479cc6434854f7e2f3f9e235",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:79:79",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 79
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "0cc60d1d6774511dff10c2e63a517726b09f13591dabde3deb93af3718c46a08",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:812:812",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 812
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "4ba4a3f7917f7ca6f7691a2f01ee7b657b560413d31f301f72403c26a237c789",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:827:827",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 827
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "5fb8576492c4c96f861eeed43697977f7e47ad4c596dbf6ffe4d5d2343f4f2c3",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:83:83",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 83
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "0cb0616d841572b9d52d802efcdcd4c766848f92fb7f92d5e8fcdcf26559d618",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:852:852",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 852
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "38eb7766194f9ab3798d6570e85ad370b46cf8e64645652f9b69bca5b50996ac",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:853:853",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 853
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "b83f657ea2fa5dff07a83fc3c31cdfeb442618e381194cbe073b6ee7d1f94997",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:870:870",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 870
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "cf28d2b0693c8301fd17ee8cb43503c19ed0b5280ebf4db50331100d8bdd08be",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:883:883",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 883
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        },
+        {
+            "id": "d69011e35e99f557267e630763676d019dc22b9ce1170353ee6a0d8d18b09649",
+            "category": "sast",
+            "name": "Allocation of resources without limits or throttling",
+            "description": "The application was found using the `requests` module without configuring a timeout value for\nconnections. This could lead to uncontrolled resource consumption where the application could\nrun out of\nsocket descriptors, effectively causing a Denial of Service (DoS).\n\nTo remediate this issue, pass in a `timeout=` argument to each `requests` call.\n\nExample using a timeout for an HTTP GET request:\n```\n# Issue a GET request to https://example.com with a timeout of 10 seconds\nresponse = requests.get('https://example.com', timeout=10)\n# Work with the response object\n# ...\n```\n\nFor more information on using the requests module see:\n- https://requests.readthedocs.io/en/latest/api/\n",
+            "cve": "semgrep_id:bandit.B113:99:99",
+            "severity": "Medium",
+            "scanner": {
+                "id": "semgrep",
+                "name": "Semgrep"
+            },
+            "location": {
+                "file": "api-base-frontend/inf23620241/frontend/frontend_analisis/views.py",
+                "start_line": 99
+            },
+            "identifiers": [
+                {
+                    "type": "semgrep_id",
+                    "name": "bandit.B113",
+                    "value": "bandit.B113",
+                    "url": "https://semgrep.dev/r/gitlab.bandit.B113"
+                },
+                {
+                    "type": "cwe",
+                    "name": "CWE-770",
+                    "value": "770",
+                    "url": "https://cwe.mitre.org/data/definitions/770.html"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A05:2021 - Security Misconfiguration",
+                    "value": "A05:2021"
+                },
+                {
+                    "type": "owasp",
+                    "name": "A6:2017 - Security Misconfiguration",
+                    "value": "A6:2017"
+                },
+                {
+                    "type": "bandit_test_id",
+                    "name": "Bandit Test ID B113",
+                    "value": "B113"
+                }
+            ]
+        }
+    ],
+    "scan": {
+        "analyzer": {
+            "id": "semgrep",
+            "name": "Semgrep",
+            "url": "https://gitlab.com/gitlab-org/security-products/analyzers/semgrep",
+            "vendor": {
+                "name": "GitLab"
+            },
+            "version": "5.19.0"
+        },
+        "scanner": {
+            "id": "semgrep",
+            "name": "Semgrep",
+            "url": "https://github.com/returntocorp/semgrep",
+            "vendor": {
+                "name": "GitLab"
+            },
+            "version": "1.74.0"
+        },
+        "type": "sast",
+        "start_time": "2024-11-11T01:20:11",
+        "end_time": "2024-11-11T01:20:25",
+        "status": "success"
+    }
+}
