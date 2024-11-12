@@ -1,9 +1,10 @@
 from django.db import models
 
+
 class Motor(models.Model):
     n_serie = models.CharField(max_length=256)
     marca = models.CharField(max_length=256)
-    estado = models.CharField(max_length=256)
+    estado = models.CharField(max_length=256) 
 
 class Mecanico(models.Model):
     rut = models.CharField(max_length=10, primary_key=True)
